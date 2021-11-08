@@ -18,9 +18,6 @@ int main() {
     std::time_t baseTime = mktime(&local);
     std::time_t beginTime = std::time(nullptr);
     std::time_t stopTime = std::time(nullptr) + period;
-
-
-
     for(std::time_t t = beginTime; t < stopTime; t = std::time(nullptr)){
         std::time_t showTime = baseTime - (t - beginTime);
         std::tm localNow = *std::localtime(&showTime);
