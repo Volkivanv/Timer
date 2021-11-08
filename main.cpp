@@ -1,7 +1,9 @@
 #include <iostream>
 #include <ctime>
 #include <iomanip>
-#include <windows.h>
+#include <thread>
+#include <chrono>
+//#include <windows.h>
 //#include <vector>
 
 int main() {
@@ -20,7 +22,9 @@ int main() {
         std::time_t showTime = baseTime - (t - beginTime);
         std::tm localNow = *std::localtime(&showTime);
         std::cout << std::put_time(&localNow,"%M:%S") << std::endl;
-        Sleep(1000);
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+
+       // Sleep(1000);
     }
 
     std::cout << "DING! DING! DING!" << std::endl;
