@@ -11,8 +11,6 @@ int main() {
     std::tm local = *std::localtime(&tInit);
     std::cout << "Input time period in format 'MM:SS'!" << std::endl;
     std::cin >> std::get_time(&local, "%M:%S");
-
-
     long long period = local.tm_min*60+local.tm_sec;
 
     std::time_t baseTime = mktime(&local);
